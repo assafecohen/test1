@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react';
+// import { v4 as uuidv4 } from 'uuid';
+import BingMap from './components/BingMap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import CordForm from './components/CordForm/CordForm';
 function App() {
+  const [pingsOnMap, setPingsOnMap] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{ height: '100%' }}>
+      <Row style={{ height: '100%' }}>
+        <Col>
+          <CordForm setPingsonMap={setPingsOnMap} pingsOnMap={pingsOnMap} />
+        </Col>
+        <Col>
+          <BingMap pushPins={pingsOnMap} />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
