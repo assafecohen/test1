@@ -20,6 +20,7 @@ const CordForm = ({ setPingsonMap, pingsOnMap }) => {
           ]);
         }}
       >
+        <h1>Coordinates Form</h1>
         <Form.Group>
           <Form.Label>Latitude</Form.Label>
           <Form.Control
